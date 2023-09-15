@@ -22,7 +22,7 @@ events.get('/', async (req, res) => {
 events.get('/:name', async (req, res) => {
     try {
         const foundEvent = await Event.findOne({
-            where: { event_name: req.params.name },
+            where: { name: req.params.name },
             include: [{
                 model: MeetGreet,
                 as: "meet_greets",
